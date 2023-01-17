@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <title>Encriptador Alura</title>
+</head>
+<body class="bodyPage">
+  <header class="headerPage">
+    <h1 class="headerPage__title">
+      <img class="headerPage__logo" src="https://www.dropbox.com/s/18iw912spja7rsj/Vector.png?raw=1" alt="Logo alura">
+    </h1>
+  </header>
+  <main class="encrypter">
+    <div class="encrypter__firstSection">
+      <textarea class="firstSection__messageBox" cols="30" rows="10" placeholder="Ingrese su texto aqui"></textarea>
+      <div class="firstSection__subBlock">
+        <div>
+          <img class="infoLogo" src="https://www.dropbox.com/s/eyy4s41qgqdu8oj/logo-exclamaci%C3%B3n.png?raw=1" alt="logo info">
+          <span class="info">Solo letras minusculas y sin acentos</span>
+        </div>
+        <!-- bloque botones -->
+        <div class="btnContainer">
+          <button id="btnEncryp" class="btnContainer__btn">Encriptar</button>
+          <button id="btnDecrypt" class="btnContainer__btn btnContainer__btn--white">Desencriptar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="encrypter__secondSection">
+      <img class="secondSection__img" src="aseets/Muñeco.png" alt="muñeco">
+
+      <div class="outletBox">
+        <span class="outletBox__info">Ningún mensaje fue encontrado</span>
+        <p class="outletBox__message">Ingresa el texto que desees encriptar o desencriptar</p>
+      </div>
+      <button id="btnCopy" class="btnContainer__btn btnContainer__btn--white btnContainer__btn--displayNone">Copiar</button>
+    </div>
+  </main>
+</body>
+</html>
