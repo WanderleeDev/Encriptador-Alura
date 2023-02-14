@@ -58,6 +58,7 @@
   flex: 1 1 max(5rem, 40%);
   height: 4rem;
   padding: 1.5rem;
+  border: solid 0.1rem #0A3871;
   border-radius: 1.5rem;
   background-color: #0A3871;
   color: #FFFFFF;
@@ -70,6 +71,7 @@
 }
 .btnContainer__btn:hover{
   background-color: #072861;
+  border: solid 0.1rem #072861;
 }
 .btnContainer__btn--white:hover{
   background-color: #eff1fa;
@@ -90,9 +92,6 @@
 .secondSection__img{
   width: 100%;
 }
-.outletBox{
-  /* padding: 0 1rem; */
-}
 .outletBox__info{
   font-weight: bold;
   font-size: 1.5rem;
@@ -100,9 +99,10 @@
 .outletBox__message{
   padding: 1rem 0;
   font-size: 1rem;
+  text-overflow: ellipsis;
 }
 .btnContainer__btn--displayNone{
-  display: none;
+  /* display: none; */
 }
 @media screen and (max-width: 48rem){
   .encrypter__firstSection{
