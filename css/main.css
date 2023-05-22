@@ -76,6 +76,7 @@
 .btnContainer__btn--white:hover{
   background-color: #eff1fa;
 }
+
 /* sección-2 encriptador */
 .encrypter__secondSection{
   flex: 1 1 max(15vw, 13rem);
@@ -102,8 +103,40 @@
   text-overflow: ellipsis;
 }
 .btnContainer__btn--displayNone{
-  /* display: none; */
+  display: none;
 }
+.copySuccessful{
+  font-weight: bold;
+  color: green;
+  background-color: #e7fff0;
+  transition: font-weight .3s linear, color 1s linear, background-color .3s linear;
+}
+
+.boxSecret{
+  position: absolute;
+  width: max(35%,200px);
+  border: #072861 solid 0.1rem;
+  text-align: center;
+  top: 20%;
+  right: 100%;
+  transform: translateY(-50%);
+}
+.boxSecret__icon{
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+  position: absolute;
+  font-size: 1.8rem;
+  border: solid 1px #072861;
+  padding: .3rem .5rem;
+  color: #072861;
+  cursor: pointer;
+  border-radius: 0 1rem 1rem 0;
+}
+.boxSecret__content{
+  padding: .5rem;
+}
+
 @media screen and (max-width: 48rem){
   .encrypter__firstSection{
     /* flex: 1 1 55%; */

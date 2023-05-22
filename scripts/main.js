@@ -1,33 +1,40 @@
-//Selección de elementos
-const boxMessage = document.querySelector('#boxMessage'); //caja de texto
-const encrypt = document.querySelector('#btnEncrypt'); //btn de encriptación
+import { encryptionKeys} from "./keys.js";
+import { modifyStyles } from "./modifyStyles.js";
 
 
 //evento para capturar el mensaje de la caja de texto
-const eventListenerBox = (target)=>{
+export const eventListenerBox = (target,method)=>{
 
-  const message = target.value; //captura del objetivo
+  //captura del objetivo y elimina espacios en blanco al inicio y final
+  const message = target.value.trim(); 
+  //const regex = /^[a-z\s?\d]+$/; --1 forma de regex--
+  const regex = new RegExp('^[a-z\\s?\\d!¡]+$', 'g'); //2 forma de regex con escape de caracteres
+  const messageErr = 'No debe contener mayúsculas, caracteres especiales ni acentos(excepto: signos de exclamación)';
+  //mensaje de encriptación exitosa
+  const successMessage = 'Operación exitosa 😎';
   
   //verifica que el contenido no este vació
   if (!message) {
     alert('Contenido vació');
     return;
   }
+  /*verifica que la cadena de texto no tenga:
+  letras mayúsculas, acentos o caracteres especiales*/
+  if (!regex.test(message)) {
+    alert(messageErr);
+    target.value= ''; //limpia el cuadro de texto
+    target.focus(); //foco en el cuadro de texto
+    return
+  }
 
+  //encriptación de mensaje
+  const newMessage = method(message,encryptionKeys);
 
+  //modificación de estilos 
+  modifyStyles('none',successMessage , newMessage,'initial' );
+  //retira la clase si es que esta agregada
+  document.querySelector('.outletBox__message').classList.remove('copySuccessful');
+
+  target.focus(); //foco en el cuadro de texto
+  target.value= ''; //limpia el cuadro de texto
 }
-
-//const replaceValues = ()=>{};
-encrypt.addEventListener('click',()=> eventListenerBox(boxMessage));
-
-
-
-
-//llaves de encriptación
-const key1 = "e";//enter
-const key2 = "i";//imes
-const key3 = "a";//ai
-const key4 = "o";//ober
-const key5 = "u";//ufat
-let keys = [key1, key2, key3, key4, key5].join("|");
-let regExp = new RegExp(keys,"g");
