@@ -168,16 +168,17 @@
 }
 
 .footer{
+  padding: 0 1rem;
   width: 100%;
   display: grid;
   text-align: center;
+  gap:  0 1rem;
 }
 .footer__text{
   font-weight: bold;
 }
 .footer__img{
   margin: auto;
-  display: block;
   aspect-ratio: 1/1;
   width: 6rem;
 }
@@ -196,15 +197,22 @@
   .secondSection__img{
     display: none; 
   }
-  .footer{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    text-align: center;
-  }
 }
 @media screen and (max-width: 23.43rem){
   .btnContainer__btn{
     flex: 1 1 10rem;
+  }
+}
+@media screen and (min-width: 600px ) {
+  .footer{
+    grid-template-columns: 1fr auto;
+    place-items: center;
+  }
+  .footer__img{
+    margin: initial;
+    justify-self: start;
+  }
+  .footer__text{
+    justify-self: end;
   }
 }
